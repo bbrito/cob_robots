@@ -72,12 +72,6 @@
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="arm_left"/>
 	</include>
-	<!-- MoveIt obstacle distance launch file -->
-	<include file="$(find cob_bringup)/tools/obstacle_distance_monitor.launch" >
- 		<arg name="robot" value="$(arg robot)" />
- 		<arg name="use_sensors" value="false" />
- 		<arg name="component_name" value="arm_left"/>
- 	</include>
 	<!-- simulated driver services -->
 	<node ns="arm_right" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen" />
 	<!-- generic controllers -->

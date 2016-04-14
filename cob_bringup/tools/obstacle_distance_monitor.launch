@@ -24,11 +24,15 @@
 		<arg name="use_sensors" value="$(arg use_sensors)"/>
 	</include>
 
+	<node pkg="cob_obstacle_distance_moveit" type="obstacle_distance_node" name="$(arg node_name)" output="screen">
+<!--
+		<remap from="/obstacle_distances" to="obstacle_distance"/>
+-->
+		<remap from="/robot_description_semantic" to="robot_description_semantic"/>
+	</node>
 
+	<node pkg="cob_obstacle_distance_moveit" type="visualize_obstacle_distance_node" name="visualize_obstacle_distance_node" output="screen">
+		<remap from="/obstacle_distances" to="obstacle_distance"/>
+	</node>
 
-	<group ns="$(arg component_name)">
-		<node pkg="cob_obstacle_distance_moveit" type="obstacle_distance_node" name="$(arg node_name)" output="screen">
-			<remap from="/obstacle_distances" to="/arm_left/obstacle_distance"/>
-		</node>
-	</group>
 </launch>

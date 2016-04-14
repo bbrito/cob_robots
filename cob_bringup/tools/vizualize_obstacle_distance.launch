@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
+	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
+
+	<arg name="component_name"/>
+
+	<arg name="load_robot_description" default="false"/>
+	<arg name="pkg_moveit_config" default="$(find cob_moveit_config)"/>
+
+	<arg name="use_sensors" default="true"/>
+	<arg name="node_name" value="visualize_obstacle_distance_node"/>
+
+	<node pkg="cob_obstacle_distance_moveit" type="visualize_obstacle_distance_node" name="$(arg node_name)" output="screen">
+		<remap from="obstacle_distances" to="obstacle_distance"/>
+	</node>
+
+</launch>
