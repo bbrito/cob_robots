@@ -32,6 +32,13 @@
   
   <xacro:property name="arm_prefix" value="arm_"/>
 
+  <link name="odom_combined"/>
+
+  <joint name="world_to_stand" type="planar">
+    <parent link="odom_combined"/>
+	<child link="base_footprint"/>
+	<origin xyz="-0.238 0 0"/>
+  </joint>
 
   <!-- composition of the robot -->
   <xacro:raw_base name="base"/>
@@ -88,7 +95,7 @@
     <origin xyz="${gripper_x} ${gripper_y} ${gripper_z}" rpy="0 0 0" />
   </xacro:vacuum_gripper_definition>
 
-  <!-- IMU brick mount on raw3-1 -->
+  <!-- IMU brick mount on raw3-1 
   <joint name="imu_brick_joint" type="fixed" >
     <origin xyz="0.402 -0.0811 0.335" rpy="0 0 0" />
     <parent link="base_link" />
@@ -104,7 +111,7 @@
       </geometry>
       <material name="IPA/LightGrey" />
     </visual>
-  </link>
+  </link>-->
   
   <!-- END: IMU brick  mount -->
 
@@ -247,5 +254,5 @@
     </visual>
   </link-->
   <!-- END: Kinect mount -->
-
+  
 </robot>
