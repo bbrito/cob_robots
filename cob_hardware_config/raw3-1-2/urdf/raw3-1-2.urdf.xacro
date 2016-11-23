@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<robot name="raw3-1-2" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find ipa_order_picking_arm_planning)/robot_conf/urdf/raw3-1.urdf.xacro" />
+
+  <!--virtual_joint name="world_joint" type="planar" parent_frame="odom_combined" child_link="base_footprint"/ -->
+
+  <xacro:macro name="raw3-1"/>
+</robot>

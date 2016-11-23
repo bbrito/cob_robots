@@ -6,6 +6,14 @@ joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
 
+## joint trajectory controller
+joint_trajectory_controller:
+  type: position_controllers/JointTrajectoryController
+  joints:
+      - virtual_joint/x
+      - virtual_joint/y
+      - virtual_joint/theta
+
 ## wheel_controller
 twist_controller:
   type: cob_omni_drive_controller/WheelController
