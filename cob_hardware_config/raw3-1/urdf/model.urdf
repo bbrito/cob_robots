@@ -132,12 +132,6 @@
   <!-- raw boxgripper 
   <xacro:include filename="$(find raw_description)/urdf/boxgripper/boxgripper.urdf.xacro" /> -->
   <!-- gripper -->
-  <link name="odom_combined"/>
-  <joint name="world_to_stand" type="planar">
-    <parent link="odom_combined"/>
-    <child link="base_footprint"/>
-    <origin xyz="-0.238 0 0"/>
-  </joint>
   <!-- composition of the robot -->
   <link name="base_footprint"/>
   <joint name="base_footprint_joint" type="fixed">
@@ -717,20 +711,31 @@
       </plugin>
     </sensor>
   </gazebo>
-  <gazebo>
-    <plugin filename="libgazebo_ros_p3d.so" name="p3d_base_controller">
-      <alwaysOn>true</alwaysOn>
-      <updateRate>100.0</updateRate>
-      <bodyName>base_link</bodyName>
-      <topicName>base_pose_ground_truth</topicName>
-      <frameName>map</frameName>
-      <xyzOffsets>25.7 25.7 0</xyzOffsets>
-      <!-- initialize odometry for fake localization-->
-      <rpyOffsets>0 0 0</rpyOffsets>
-      <gaussianNoise>0.01</gaussianNoise>
-    </plugin>
-    <canonicalBody>base_footprint</canonicalBody>
-  </gazebo>
+  <!--
+    <gazebo>
+      <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>100.0</updateRate>
+        <bodyName>${name}_link</bodyName>
+        <topicName>${name}_pose_ground_truth</topicName>
+        <frameName>map</frameName>
+        <xyzOffsets>25.7 25.7 0</xyzOffsets> 
+        <rpyOffsets>0 0 0</rpyOffsets>
+        <gaussianNoise>0.01</gaussianNoise>
+      </plugin>
+      <canonicalBody>${name}_footprint</canonicalBody>
+    </gazebo> -->
+  <!--    
+    <gazebo>
+      <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom_combined</odometryTopic>
+        <odometryFrame>odom_combined</odometryFrame>
+        <odometryRate>20.0</odometryRate>
+        <robotBaseFrame>base_footprint</robotBaseFrame>
+      </plugin>
+    </gazebo>
+    -->
   <gazebo>
     <plugin filename="libhwi_switch_gazebo_ros_control.so" name="ros_control">
       <robotNamespace>base</robotNamespace>
