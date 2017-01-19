@@ -40,6 +40,20 @@ twist_controller:
       drive: fr_caster_r_wheel_joint
       steer_neutral_position: 0.0
 
+base_cartesian_twist_controller:
+  type: CartesianTwistController
+  root_name: "/odom_combined"
+  tip_name: "/base_footprint"
+  fb_trans:
+    p: 20.0
+    i: 0.5
+    d: 0.0
+    i_clamp: 1.0
+  fb_rot:
+    p: 0.5
+    i: 0.1
+    d: 0.0
+    i_clamp: 0.2
 
 ## odometry_controller
 odometry_controller:
