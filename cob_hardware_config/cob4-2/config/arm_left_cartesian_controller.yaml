@@ -10,38 +10,41 @@ twist_controller:
 
   # damping parameters
   numerical_filtering: false
-  damping_method: 2    #NO 0, CONSTANT 1, MANIPULABILITY 2, LeastSingularValue 3
+  damping_method: 4    #NO 0, CONSTANT 1, MANIPULABILITY 2, LeastSingularValue 3, Sigmoid 4
   damping_factor: 0.01
   lambda_max: 0.01
-slope_damping: 0.05
+  slope_damping: 0.05
   w_threshold: 0.01
   beta: 0.005
   eps_damping: 0.003
   eps_truncation: 0.001
 
   # constraints
-  solver: 5    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4, WLN_Sigmoid 5
+  solver: 1    #Default 0, WLN 1, GPM 2, StackOfTask 3, Task2nd 4, JLA_SIG_MODULATION 5
   priority: 500    #Prio for main task
   k_H: 1.0    #Self-motion factor for GPM
 
   # JLA
-  constraint_jla: 0    #OFF 0, ENABLED 1, MID 1, INEQ 2
+  constraint_jla: 3    #OFF 0, ENABLED 1, MID 1, INEQ 2, JLA_SIG 3
   priority_jla: 50
   k_H_jla: -1.0
   activation_threshold_jla: 10.0    #in [%]
-  damping_jla: 0.000001
+  activation_position_threshold_jla: 0.5 #in [rad]
+  activation_speed_threshold_jla: 1.0 #in [rad/s]
+  damping_jla: 0.05
+  damping_speed_jla: 5.0
 
   # CA
-  constraint_ca: 1    #OFF 0, ENABLED 1
+  constraint_ca: 0    #OFF 0, ENABLED 1
   priority_ca: 100
   k_H_ca: -1.0
   activation_threshold_ca: 0.1    #in [m]
   damping_ca: 0.000001
 
   # limit enforcing
-  keep_direction: true
-  enforce_pos_limits: true
-  enforce_vel_limits: true
+  keep_direction: false
+  enforce_pos_limits: false
+  enforce_vel_limits: false
   enforce_acc_limits: false
   limits_tolerance: 5.0    #for position limits [deg]
   #limits_acc: [10.0, 10.0, 10.0, 10.0, 10.0, 10.0, 10.0]    #[rad/s2]
