@@ -10,25 +10,8 @@
 	<arg name="prefix" default="arm_"/>
 	<arg name="sim" default="false"/>
 
-<<<<<<< HEAD
-	<!-- universal robot arm 
-	<node ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-=======
 	<!-- universal robot arm -->
 	<node unless="$(arg sim)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-<<<<<<< HEAD
->>>>>>> ad5c5d513cd3d7689ab92bf5589a7ac4402b4fef
-=======
->>>>>>> bfbe1ec84ab1557d22b1bdf240a318a92eb1c7e3
->>>>>>> indigo_dev
-		<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-		<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-		<param name="min_payload" type="double" value="$(arg min_payload)"/>
-		<param name="max_payload" type="double" value="$(arg max_payload)"/>
-		<param name="prefix" value="$(arg prefix)"/>
-	</node>-->
-	<!-- universal robot arm modern driver -->
-	<node ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 		<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
 		<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
 		<param name="min_payload" type="double" value="$(arg min_payload)"/>

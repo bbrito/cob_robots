@@ -2,7 +2,6 @@
 <launch>
 
 	<arg name="robot" default="raw3-1"/>
-<<<<<<< HEAD
 
 	<!-- aggregated robot_state_publisher -->
 	<include file="$(find cob_bringup)/tools/robot_state_publisher.launch">
@@ -67,10 +66,5 @@
 	<include file="$(find cob_bringup)/tools/base_collision_observer.launch" >
 		<arg name="robot" value="$(arg robot)"/>
 	</include>
-=======
-	<node ns="base" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
-	<!--node ns="arm" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/-->
-	<node ns="torso" pkg="cob_controller_configuration_gazebo" type="gazebo_services.py" name="gazebo_services" cwd="node" respawn="false" output="screen"/>
->>>>>>> ad5c5d513cd3d7689ab92bf5589a7ac4402b4fef
 
 </launch>
