@@ -1,5 +1,9 @@
 controller_list:
+<<<<<<< HEAD
   - name: arm/joint_trajectory_controller
+=======
+  - name: arm_controller
+>>>>>>> indigo_dev
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
@@ -9,7 +13,11 @@ controller_list:
       - arm_wrist_1_joint
       - arm_wrist_2_joint
       - arm_wrist_3_joint
+<<<<<<< HEAD
   - name: torso/joint_trajectory_controller
+=======
+  - name: torso_controller
+>>>>>>> indigo_dev
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:

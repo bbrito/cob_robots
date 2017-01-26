@@ -1,4 +1,5 @@
 # no sensors configured yet
+<<<<<<< HEAD
 sensors:
   - sensor_plugin: occupancy_map_monitor/PointCloudOctomapUpdater
     point_cloud_topic: /cam3d/depth_registered/points
@@ -7,3 +8,5 @@ sensors:
     padding_offset: 0.1
     padding_scale: 1.0
     filtered_cloud_topic: filtered_cloud
+=======
+>>>>>>> indigo_dev

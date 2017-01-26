@@ -1,0 +1,12 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: cob_hardware_config
+    relative_path: raw3-1/urdf/raw3-1.urdf.xacro
+  SRDF:
+    relative_path: config/raw3-1.srdf
+  CONFIG:
+<<<<<<< HEAD
+    generated_timestamp: 1478102396
+=======
+    generated_timestamp: 1369838033
+>>>>>>> indigo_dev
