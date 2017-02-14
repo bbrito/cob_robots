@@ -8,6 +8,7 @@
 	<arg name="min_payload"/>
 	<arg name="max_payload"/>
 	<arg name="prefix" default="arm_"/>
+	<arg name="cartesian_control" default="false"/>
 	<arg name="sim" default="false"/>
 
 	<!-- universal robot arm -->
@@ -21,6 +22,11 @@
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
 		<arg name="component_name" value="$(arg component_name)"/>
+	</include>
+	<include if="$(arg cartesian_control)" file="$(find cob_bringup)/controllers/generic_cartesian_controller.launch">
+		<arg name="robot" value="$(arg robot)"/>
+		<arg name="component_name" value="$(arg component_name)"/>
+		<arg name="debug" value="false"/>
 	</include>
 
 </launch>
