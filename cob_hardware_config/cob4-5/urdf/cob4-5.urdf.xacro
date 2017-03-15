@@ -14,7 +14,7 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_base/base.urdf.xacro" />
 
   <!-- torso -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso_static.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_torso/torso.urdf.xacro" />
 
   <!-- arm -->
   <xacro:include filename="$(find schunk_description)/urdf/lwa4p_extended/lwa4p_extended.urdf.xacro" />
@@ -23,10 +23,10 @@
   <xacro:include filename="$(find cob_description)/urdf/cob4_gripper/gripper.urdf.xacro" />
 
   <!-- head -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head_static.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_head/head.urdf.xacro" />
 
   <!-- sensorring -->
-  <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring_3dcs_asus.urdf.xacro" />
+  <xacro:include filename="$(find cob_description)/urdf/cob4_sensorring/sensorring.urdf.xacro" />
 
   <!-- composition of the robot -->
   <xacro:base name="base" use_old_joint_names="false"/>
