@@ -3,6 +3,7 @@
 
 	<arg name="robot" default="$(optenv ROBOT !!NO_ROBOT_SET!!)"/>
 	<arg name="component_name" default="arm"/>
+	<arg name="cartesian_control" default="false"/>
 	<arg name="use_modern_driver" default="false"/>
 	<arg name="robot_ip" default="localhost"/>
 	<arg name="reverse_port" default="50001"/>
