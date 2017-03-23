@@ -5,6 +5,7 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
 	<arg name="debug" default="false"/>
+<arg name="load_robot_description" default="true"/>
 
 	<group ns="$(arg component_name)">
 
@@ -26,6 +27,15 @@
 			<param name="target_frame" type="str" value="cartesian_target"/>
 		</node>
 -->
+
+<!-- Planning Functionality -->
+  <include file="$(find cob_moveit_bringup)/launch/planning_context.xml">
+    <arg name="robot" value="$(arg robot)"/>
+    <arg name="load_robot_description" value="$(arg load_robot_description)"/>
+  </include>
+
+        <node name="follow_trajectory_interface" pkg="cob_follow_trajectory_interface" type="cob_follow_trajectory_interface_node" cwd="node" respawn="false" output="screen"/>
+        
 
 		<group if="$(arg debug)">
 			<node pkg="cob_twist_controller" type="debug_evaluate_jointstates_node" name="debug_evaluate_jointstates_node" cwd="node" respawn="false" output="screen"/>
