@@ -9,6 +9,16 @@ controller_list:
       - arm_wrist_1_joint
       - arm_wrist_2_joint
       - arm_wrist_3_joint
+  - name: arm
+    action_ns: follow_trajectory_interface
+    type: FollowJointTrajectory
+    joints:
+      - arm_shoulder_pan_joint
+      - arm_shoulder_lift_joint
+      - arm_elbow_joint
+      - arm_wrist_1_joint
+      - arm_wrist_2_joint
+      - arm_wrist_3_joint
   - name: torso_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
