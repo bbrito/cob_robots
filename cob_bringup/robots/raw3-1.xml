@@ -70,6 +70,7 @@
 			<arg name="sim" value="$(arg sim)"/>
 			<arg name="min_payload"  value="0.0"/>
 			<arg name="max_payload"  value="20.0"/>
+			<arg name="cartesian_control" value="true"/>
 		</include> 
 		<!-- ARM Modern Driver 
 		<include file="$(find ur_modern_driver)/launch/ur10_bringup_joint_limited.launch">

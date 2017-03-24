@@ -24,6 +24,8 @@
 		<node pkg="cob_obstacle_distance" type="cob_obstacle_distance" name="obstacle_distance" cwd="node" respawn="false" output="screen" />
 		<node pkg="cob_follow_trajectory_interface" type="cob_follow_trajectory_interface_node" name="follow_trajectory_interface"  cwd="node" respawn="false" output="screen">
 			<param name="target_frame" type="str" value="arm_target2"/>
+	    </node>
+			
 		<node pkg="cob_cartesian_controller" type="cartesian_controller_node" name="cartesian_controller"  cwd="node" respawn="false" output="screen">
 			<param name="target_frame" type="str" value="cartesian_target"/>
 		</node>
