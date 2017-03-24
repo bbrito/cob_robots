@@ -68,9 +68,9 @@ frame_tracker:
   marker_scale: 0.3
   movable_trans: true
   movable_rot: true
-  pid_trans_x: {p: 1.0, i: 0.1, d: 0.0, i_clamp: 1.0}
-  pid_trans_y: {p: 1.0, i: 0.1, d: 0.0, i_clamp: 1.0}
-  pid_trans_z: {p: 1.0, i: 0.1, d: 0.0, i_clamp: 1.0}
+  pid_trans_x: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_y: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
+  pid_trans_z: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot_x: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot_y: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
   pid_rot_z: {p: 1.0, i: 0.0, d: 0.0, i_clamp: 0.0}
