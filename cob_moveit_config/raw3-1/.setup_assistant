@@ -5,4 +5,6 @@ moveit_setup_assistant_config:
   SRDF:
     relative_path: config/raw3-1.srdf
   CONFIG:
-    generated_timestamp: 1369838033
+    author_name: Bruno Brito
+    author_email: bfb@ipa.fraunhofer.de
+    generated_timestamp: 1491052730
