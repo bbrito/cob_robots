@@ -1,6 +1,6 @@
 controller_list:
-  - name: arm/joint_trajectory_controller
-    action_ns: follow_joint_trajectory
+  - name: arm
+    action_ns: follow_trajectory_interface
     type: FollowJointTrajectory
     joints:
       - arm_shoulder_pan_joint
