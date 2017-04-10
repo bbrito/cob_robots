@@ -14,21 +14,21 @@
 
 	<group unless="$(arg sim)">
 		<!-- universal robot python driver -->
-		<node unless="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
-			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
-			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
-			<param name="min_payload" type="double" value="$(arg min_payload)"/>
-			<param name="max_payload" type="double" value="$(arg max_payload)"/>
-			<param name="prefix" value="$(arg prefix)"/>
-		</node>
-		<!-- universal robot modern driver -->
-		<!--node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+		<!--node unless="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_driver" type="driver.py" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
 			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
 			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
 			<param name="min_payload" type="double" value="$(arg min_payload)"/>
 			<param name="max_payload" type="double" value="$(arg max_payload)"/>
 			<param name="prefix" value="$(arg prefix)"/>
 		</node-->
+		<!-- universal robot modern driver -->
+		<node if="$(arg use_modern_driver)" ns="arm/joint_trajectory_controller" pkg="ur_modern_driver" type="ur_driver" name="ur_driver" args="$(arg robot_ip) $(arg reverse_port)" output="screen">
+			<remap from="/arm/joint_trajectory_controller/joint_states" to="/arm/joint_states"/>
+			<remap from="/arm/joint_trajectory_controller/robot_description" to="/robot_description"/>
+			<param name="min_payload" type="double" value="$(arg min_payload)"/>
+			<param name="max_payload" type="double" value="$(arg max_payload)"/>
+			<param name="prefix" value="$(arg prefix)"/>
+		</node>
 	</group>
 	<include if="$(arg sim)" file="$(find cob_bringup)/controllers/generic_controller.launch">
 		<arg name="robot" value="$(arg robot)"/>
