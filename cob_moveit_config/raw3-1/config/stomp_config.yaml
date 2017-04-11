@@ -2,7 +2,7 @@ stomp/arm:
   group_name: arm
   optimization:
     num_timesteps: 20
-    num_iterations: 50
+    num_iterations: 20
     num_iterations_after_valid: 0    
     num_rollouts: 10
     max_rollouts: 100
@@ -11,7 +11,7 @@ stomp/arm:
   task:
     noise_generator:
       - class: stomp_moveit/NormalDistributionSampling
-        stddev: [0.3, 1.0, 0.5, 0.4, 0.3, 0.3]
+        stddev: [0.3, 0.3, 0.3, 0.4, 0.3, 0.3]
     cost_functions:
       - class: stomp_moveit/ObstacleDistanceGradient
         max_distance: 0.2
