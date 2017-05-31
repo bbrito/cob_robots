@@ -17,9 +17,9 @@
     </group>
     <group name="robot">
         <joint name="base" />
-        <joint name="arm_shoulder_pan_joint" />
-        <joint name="arm_shoulder_lift_joint" />
-        <joint name="arm_elbow_joint" />
+        <joint name="arm_shoulder_1_joint" />
+        <joint name="arm_shoulder_2_joint" />
+        <joint name="arm_shoulder_3_joint" />
         <joint name="arm_wrist_1_joint" />
         <joint name="arm_wrist_2_joint" />
         <joint name="arm_wrist_3_joint" />
