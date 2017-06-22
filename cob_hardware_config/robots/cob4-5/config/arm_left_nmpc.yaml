@@ -9,8 +9,8 @@ joint_names: [arm_left_1_joint, arm_left_2_joint, arm_left_3_joint, arm_left_4_j
 nmpc:
   state_dim: 10
   control_dim: 10
-  time_horizon: 0.5
-  shooting_nodes: 5
+  time_horizon: 0.2
+  shooting_nodes: 3
   
   base:
     base_active: true
