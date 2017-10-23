@@ -5,8 +5,6 @@
 	<arg name="pkg_hardware_config" default="$(find cob_hardware_config)"/>
 	<arg name="component_name"/>
 
-	
-
 		<!-- load controller configs -->
 		<rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_controller.yaml"/>
 		<!--rosparam command="load" file="$(arg pkg_hardware_config)/robots/$(arg robot)/config/$(arg component_name)_joint_limits.yaml"/-->
